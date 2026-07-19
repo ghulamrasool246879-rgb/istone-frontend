@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import Loader from "./components/Loader/Loader";
-import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
-import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import ScrollProgress from "./components/ScrollProgress/ScrollProgress";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
+import Loader from "./Components/Loader/Loader";
+import WhatsAppButton from "./Components/WhatsAppButton/WhatsAppButton";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+import ScrollProgress from "./Components/ScrollProgress/ScrollProgress";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
