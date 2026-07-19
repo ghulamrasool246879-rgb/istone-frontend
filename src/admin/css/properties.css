@@ -1,0 +1,54 @@
+.page-title{
+    margin-bottom:25px;
+    color:#07182e;
+}
+
+.property-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.property-table th{
+    background:#07182e;
+    color:white;
+    padding:18px;
+}
+
+.property-table td{
+    padding:18px;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+.edit-btn{
+    background:#D4AF37;
+    color:#07182e;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    margin-right:10px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.delete-btn{
+    background:#dc3545;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.edit-btn:hover{
+    opacity:.9;
+}
+
+.delete-btn:hover{
+    opacity:.9;
+}

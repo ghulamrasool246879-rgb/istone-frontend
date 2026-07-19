@@ -1,0 +1,45 @@
+.featured {
+  padding: 90px 8%;
+  background: #fff;
+}
+
+.featured-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.featured-heading p {
+  color: #c79b33;
+  letter-spacing: 3px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.featured-heading h2 {
+  font-size: 52px;
+  color: #07182e;
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+}
+
+.featured-heading span {
+  color: #666;
+  font-size: 18px;
+}
+
+@media (max-width: 700px) {
+  .featured {
+    padding: 70px 20px;
+  }
+
+  .featured-heading h2 {
+    font-size: 36px;
+  }
+}

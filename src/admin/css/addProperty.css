@@ -1,0 +1,44 @@
+.add-property{
+    padding:30px;
+}
+
+.add-property h1{
+    color:#07182e;
+    margin-bottom:25px;
+}
+
+.add-property form{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-width:700px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.add-property input,
+.add-property select,
+.add-property textarea{
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.add-property button{
+    padding:14px;
+    background:#07182e;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.add-property button:hover{
+    background:#D4AF37;
+    color:#07182e;
+}

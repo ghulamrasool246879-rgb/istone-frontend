@@ -1,0 +1,52 @@
+import { Helmet } from "react-helmet-async";
+import Hero from "../components/Hero/Hero";
+import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties";
+import About from "../components/About/About";
+import Leadership from "../components/Leadership/Leadership";
+import WhyChoose from "../components/WhyChoose/WhyChoose";
+import Counter from "../components/Counter/Counter";
+import Testimonials from "../components/Testimonials/Testimonials";
+import Contact from "../components/Contact/Contact";
+import Map from "../components/Map/Map";
+import PageTransition from "../components/PageTransition/PageTransition";
+
+function Home() {
+  return (
+    <>
+      <Helmet>
+        <title>
+          I-STONE Marketing & Consultants | Real Estate in Islamabad & Rawalpindi
+        </title>
+
+        <meta
+          name="description"
+          content="Buy, sell and invest in CDA sectors, DHA Islamabad, PHA Flats, Bahria Town, Capital Smart City and all major societies of Islamabad & Rawalpindi with I-STONE Marketing & Consultants."
+        />
+
+        <meta
+          name="keywords"
+          content="Real Estate Islamabad, Property Islamabad, DHA Islamabad, CDA Sectors, PHA Flats, Bahria Town, Capital Smart City, Buy Plot Islamabad, Sell Property Rawalpindi"
+        />
+
+        <meta
+          name="author"
+          content="I-STONE Marketing & Consultants"
+        />
+      </Helmet>
+
+      <PageTransition>
+        <Hero />
+        <FeaturedProperties />
+        <About />
+        <Leadership />
+        <WhyChoose />
+        <Counter />
+        <Testimonials />
+        <Contact />
+        <Map />
+      </PageTransition>
+    </>
+  );
+}
+
+export default Home;

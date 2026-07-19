@@ -1,0 +1,18 @@
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:20px 30px;
+    border-radius:15px;
+    margin-bottom:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.topbar h2{
+    color:#07182e;
+}
+
+.topbar p{
+    color:#666;
+}
