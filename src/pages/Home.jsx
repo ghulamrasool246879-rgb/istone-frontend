@@ -1,14 +1,14 @@
 import { Helmet } from "react-helmet-async";
-import Hero from "../components/Hero/Hero";
-import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties";
-import About from "../components/About/About";
-import Leadership from "../components/Leadership/Leadership";
-import WhyChoose from "../components/WhyChoose/WhyChoose";
-import Counter from "../components/Counter/Counter";
-import Testimonials from "../components/Testimonials/Testimonials";
-import Contact from "../components/Contact/Contact";
-import Map from "../components/Map/Map";
-import PageTransition from "../components/PageTransition/PageTransition";
+import Hero from "../Components/Hero/Hero";
+import FeaturedProperties from "../Components/FeaturedProperties/FeaturedProperties";
+import About from "../Components/About/About";
+import Leadership from "../Components/Leadership/Leadership";
+import WhyChoose from "../Components/WhyChoose/WhyChoose";
+import Counter from "../Components/Counter/Counter";
+import Testimonials from "../Components/Testimonials/Testimonials";
+import Contact from "../Components/Contact/Contact";
+import Map from "../Components/Map/Map";
+import PageTransition from "../Components/PageTransition/PageTransition";
 
 function Home() {
   return (
