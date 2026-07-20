@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import ContactSection from "../components/Contact/Contact";
-import PageTransition from "../components/PageTransition/PageTransition";
-import Map from "../components/Map/Map";
+import ContactSection from "../Components/Contact/Contact";
+import PageTransition from "../Components/PageTransition/PageTransition";
+import Map from "../Components/Map/Map";
 
 
 function Contact() {
