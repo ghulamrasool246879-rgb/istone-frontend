@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet-async";
 import PageTransition from "../Components/PageTransition/PageTransition";
 
 import aboutImg from "../assets/images/about.jpg";
-import ceo from "../assets/team/ceo.jpg";
-import manager from "../assets/team/manager.jpg";
+import ceo from "../assets/Team/ceo.jpg";
+import manager from "../assets/Team/manager.jpg";
 
 
 function About() {
