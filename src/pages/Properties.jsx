@@ -1,6 +1,6 @@
 import "./Properties.css";
 import { Helmet } from "react-helmet-async";
-import PageTransition from "../components/PageTransition/PageTransition";
+import PageTransition from "../Components/PageTransition/PageTransition";
 
 
 

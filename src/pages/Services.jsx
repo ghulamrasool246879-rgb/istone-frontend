@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import "./Services.css";
 import servicesImg from "../assets/images/services.jpg";
-import PageTransition from "../components/PageTransition/PageTransition";
+import PageTransition from "../Components/PageTransition/PageTransition";
 
 
 function Services() {
