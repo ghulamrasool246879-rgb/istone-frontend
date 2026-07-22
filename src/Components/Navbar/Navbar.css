@@ -1,18 +1,30 @@
-/* ===========================
+/* ==========================================
+   Reset
+========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================================
    Top Bar
-=========================== */
+========================================== */
 
 .top-bar {
+  width: 100%;
   background: #000;
   color: #fff;
   font-size: 13px;
-  padding: 6px 0;
+  padding: 8px 0;
 }
 
 .top-bar .container {
   width: 90%;
   max-width: 1300px;
   margin: auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,34 +32,38 @@
 
 .top-right {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
 .phone-link {
   color: #fff;
   text-decoration: none;
+  transition: .3s;
 }
 
 .phone-link:hover {
   color: #D4AF37;
 }
 
-/* ===========================
+/* ==========================================
    Navbar
-=========================== */
+========================================== */
 
 .navbar {
+  width: 100%;
   background: #07182e;
   position: sticky;
   top: 0;
   z-index: 999;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
 }
 
 .navbar .container {
   width: 90%;
   max-width: 1300px;
   margin: auto;
+
   height: 80px;
 
   display: flex;
@@ -57,7 +73,14 @@
   position: relative;
 }
 
-/* Logo */
+/* ==========================================
+   Logo
+========================================== */
+
+.logo {
+  display: flex;
+  align-items: center;
+}
 
 .logo img {
   width: 120px;
@@ -65,12 +88,14 @@
   display: block;
 }
 
-/* Navigation */
+/* ==========================================
+   Navigation
+========================================== */
 
 .nav-links {
   display: flex;
-  gap: 40px;
   align-items: center;
+  gap: 40px;
 }
 
 .nav-links li {
@@ -83,7 +108,7 @@
   font-size: 16px;
   font-weight: 500;
   position: relative;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .nav-links a::after {
@@ -91,12 +116,10 @@
   position: absolute;
   left: 0;
   bottom: -7px;
-
   width: 0;
   height: 2px;
-
   background: #D4AF37;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .nav-links a:hover {
@@ -107,7 +130,9 @@
   width: 100%;
 }
 
-/* Button */
+/* ==========================================
+   Button
+========================================== */
 
 .contact-btn {
   background: #D4AF37;
@@ -117,7 +142,7 @@
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: .3s;
 }
 
 .contact-btn:hover {
@@ -125,7 +150,9 @@
   transform: translateY(-2px);
 }
 
-/* Mobile Menu Icon */
+/* ==========================================
+   Menu Icon
+========================================== */
 
 .menu-icon {
   display: none;
@@ -134,87 +161,122 @@
   cursor: pointer;
 }
 
-/* ===========================
+/* ==========================================
    Tablet
-=========================== */
+========================================== */
 
-@media (max-width: 992px) {
+@media (max-width:992px){
 
-  .contact-btn {
-    display: none;
-  }
-
-  .nav-links {
-    gap: 20px;
-  }
+.contact-btn{
+    display:none;
 }
 
-/* ===========================
+.nav-links{
+    gap:20px;
+}
+
+}
+
+/* ==========================================
    Mobile
-=========================== */
+========================================== */
 
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-  /* Keep the black strip visible */
-  .top-bar {
-    display: block;
-  }
+.top-bar{
+    display:block;
+}
 
-  .top-bar .container {
-    flex-direction: column;
-    gap: 5px;
-    text-align: center;
-    padding: 8px 0;
-  }
+.top-bar .container{
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    text-align:center;
+    padding:5px 0;
+}
 
-  .navbar .container {
-    height: 70px;
-  }
+.navbar .container{
+    height:70px;
+}
 
-  .logo img {
-    width: 95px;
-    height: auto;
-  }
+.logo img{
+    width:95px;
+}
 
-  .menu-icon {
-    display: block;
-    z-index: 1001;
-  }
+.menu-icon{
+    display:block;
+    z-index:1001;
+}
 
-  .contact-btn {
-    display: none;
-  }
+.contact-btn{
+    display:none;
+}
 
-  .nav-links {
-    position: absolute;
-    top: 70px;
-    left: -100%;
-    width: 100%;
-    background: #07182e;
+.nav-links{
+    position:absolute;
+    top:100%;
+    left:-100%;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width:100%;
 
-    gap: 25px;
-    padding: 30px 0;
+    background:#07182e;
 
-    transition: 0.4s ease;
-  }
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 
-  .nav-links.active {
-    left: 0;
-  }
+    gap:0;
 
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
+    padding:15px 0;
 
-  .nav-links a {
-    display: block;
-    width: 100%;
-    font-size: 18px;
-    padding: 10px 0;
-  }
+    transition:.4s ease;
+
+    z-index:999;
+}
+
+.nav-links.active{
+    left:0;
+}
+
+.nav-links li{
+    width:100%;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-links li:last-child{
+    border-bottom:none;
+}
+
+.nav-links a{
+    display:block;
+    width:100%;
+    padding:16px;
+    text-align:center;
+    font-size:17px;
+}
+
+}
+
+/* ==========================================
+   Small Mobile
+========================================== */
+
+@media (max-width:480px){
+
+.top-bar{
+    font-size:12px;
+}
+
+.logo img{
+    width:85px;
+}
+
+.menu-icon{
+    font-size:30px;
+}
+
+.nav-links a{
+    font-size:16px;
+}
+
 }
