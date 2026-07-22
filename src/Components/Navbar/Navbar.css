@@ -205,17 +205,19 @@
 
 .menu-icon{
     display:block;
-    z-index:1001;
+    z-index:1002;
 }
 
 .contact-btn{
     display:none;
 }
 
+/* Hidden Menu */
+
 .nav-links{
     position:absolute;
     top:100%;
-    left:-100%;
+    left:0;
 
     width:100%;
 
@@ -225,17 +227,29 @@
     flex-direction:column;
     align-items:center;
 
+    padding:15px 0;
     gap:0;
 
-    padding:15px 0;
+    opacity:0;
+    visibility:hidden;
 
-    transition:.4s ease;
+    transform:translateY(-20px);
 
-    z-index:999;
+    transition:all .35s ease;
+
+    z-index:1001;
 }
 
+/* Show Menu */
+
 .nav-links.active{
-    left:0;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
 }
 
 .nav-links li{
@@ -252,31 +266,8 @@
     width:100%;
     padding:16px;
     text-align:center;
+    color:#fff;
     font-size:17px;
-}
-
-}
-
-/* ==========================================
-   Small Mobile
-========================================== */
-
-@media (max-width:480px){
-
-.top-bar{
-    font-size:12px;
-}
-
-.logo img{
-    width:85px;
-}
-
-.menu-icon{
-    font-size:30px;
-}
-
-.nav-links a{
-    font-size:16px;
 }
 
 }
