@@ -3,6 +3,8 @@ import axios from "axios";
 import AdminLayout from "../components/AdminLayout";
 import "../css/addProperty.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function AddProperty() {
   const adminInfo = JSON.parse(localStorage.getItem("adminInfo"));
 
@@ -19,17 +21,17 @@ function AddProperty() {
   const changeHandler = (e) => {
     const { name, value, type, checked } = e.target;
 
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }));
   };
 
   const imageHandler = (e) => {
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       images: e.target.files,
-    });
+    }));
   };
 
   const submitHandler = async (e) => {
@@ -50,11 +52,11 @@ function AddProperty() {
       }
 
       await axios.post(
-        "http://localhost:5000/api/properties",
+        `${API_URL}/api/properties`,
         data,
         {
           headers: {
-            Authorization: `Bearer ${adminInfo.token}`,
+            Authorization: `Bearer ${adminInfo?.token}`,
             "Content-Type": "multipart/form-data",
           },
         }
@@ -72,7 +74,8 @@ function AddProperty() {
         images: [],
       });
     } catch (error) {
-      console.log(error);
+      console.error(error);
+
       alert(
         error.response?.data?.message || "Failed to Add Property"
       );
@@ -82,11 +85,9 @@ function AddProperty() {
   return (
     <AdminLayout>
       <div className="add-property">
-
         <h1>Add Property</h1>
 
         <form onSubmit={submitHandler}>
-
           <input
             type="text"
             name="title"
@@ -156,9 +157,7 @@ function AddProperty() {
           <button type="submit">
             Add Property
           </button>
-
         </form>
-
       </div>
     </AdminLayout>
   );

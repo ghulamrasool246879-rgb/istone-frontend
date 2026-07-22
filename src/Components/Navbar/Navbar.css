@@ -3,231 +3,218 @@
 =========================== */
 
 .top-bar {
-    background : #000;
-    color: #fff;
-    font-size: 12px;
-    padding: 2px 0;
+  background: #000;
+  color: #fff;
+  font-size: 13px;
+  padding: 6px 0;
 }
 
 .top-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 24px;
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.top-right{
-    display:flex;
-    gap:15px;
+.top-right {
+  display: flex;
+  gap: 15px;
+}
+
+.phone-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  color: #D4AF37;
 }
 
 /* ===========================
    Navbar
 =========================== */
 
-.navbar{
-    background:#07182e;
-    position:sticky;
-    top:0;
-    z-index:999;
-    box-shadow:0 3px 10px rgba(0,0,0,.25);
+.navbar {
+  background: #07182e;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-.container{
-    width:90%;
-    max-width:1300px;
-    margin:auto;
+.navbar .container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  height: 80px;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-/* Smaller Navbar */
-
-.navbar .container{
-    height:80px;
+  position: relative;
 }
 
 /* Logo */
 
-
 .logo img {
-    width: 120px;
-    height: 100px;
-    object-fit: contain;
+  width: 120px;
+  height: auto;
+  display: block;
 }
 
-.nav-links{
-    display:flex;
-    gap:40px;
+/* Navigation */
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
 }
 
-.nav-links li{
-    list-style:none;
+.nav-links li {
+  list-style: none;
 }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    font-weight:500;
-    position:relative;
-    transition:.3s;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
 }
 
-.nav-links a::after{
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
 
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-8px;
+  width: 0;
+  height: 2px;
 
-    width:0;
-    height:2px;
-
-    background:#D4AF37;
-
-    transition:.4s;
+  background: #D4AF37;
+  transition: 0.3s;
 }
 
-.nav-links a:hover{
-    color:#D4AF37;
+.nav-links a:hover {
+  color: #D4AF37;
 }
 
-.nav-links a:hover::after{
-
-    width:100%;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* Button */
 
-.contact-btn{
-
-    background:#D4AF37;
-    color:#07182e;
-
-    padding:12px 25px;
-
-    border:none;
-    border-radius:6px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
+.contact-btn {
+  background: #D4AF37;
+  color: #07182e;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.contact-btn:hover{
-
-    transform:translateY(-3px);
-
-    background:white;
+.contact-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
 }
 
-/* Mobile Icon */
+/* Mobile Menu Icon */
 
-.menu-icon{
-
-    display:none;
-
-    color:white;
-
-    font-size:30px;
-
-    cursor:pointer;
-}
-
-/* ===========================
-   Responsive
-=========================== */
-
-@media(max-width:992px){
-
-.nav-links{
-
-display:none;
-
-}
-
-.contact-btn{
-
-display:none;
-
-}
-
-.menu-icon{
-
-display:block;
-
-}
-
-@media(max-width:992px){
-    .logo {
-        height: 70px;
-        overflow: hidden;  /* ← remove this, it's clipping the logo */
-        display: flex;
-        align-items: center;
-    }
-
-    .logo img {
-        width: 140px;
-        height: auto;
-        margin-top: 0;  /* ← remove the -65px, that's causing the overlap */
-    }
-}
-
-.logo img {
-    mix-blend-mode: screen;
-}
-
-.navbar .container{
-
-height:70px;
-
-}
-
-.top-bar{
-
-display:none;
-
-}
-
-}
 .menu-icon {
   display: none;
-  font-size: 32px;
   color: #D4AF37;
+  font-size: 32px;
   cursor: pointer;
 }
 
-@media (max-width:768px){
+/* ===========================
+   Tablet
+=========================== */
 
-  .menu-icon{
-    display:block;
-    z-index:1001;
+@media (max-width: 992px) {
+
+  .contact-btn {
+    display: none;
   }
 
-  .contact-btn{
-    display:none;
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 768px) {
+
+  /* Keep the black strip visible */
+  .top-bar {
+    display: block;
   }
 
-  .nav-links{
-    position:absolute;
-    top:100%;
-    left:-100%;
-    width:100%;
-    background:#07182e;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-    padding:30px 0;
-    transition:.4s ease;
+  .top-bar .container {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+    padding: 8px 0;
   }
 
-  .nav-links.active{
-    left:0;
+  .navbar .container {
+    height: 70px;
   }
 
+  .logo img {
+    width: 95px;
+    height: auto;
+  }
+
+  .menu-icon {
+    display: block;
+    z-index: 1001;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: -100%;
+    width: 100%;
+    background: #07182e;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 25px;
+    padding: 30px 0;
+
+    transition: 0.4s ease;
+  }
+
+  .nav-links.active {
+    left: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 0;
+  }
 }

@@ -1,102 +1,251 @@
-.why-choose{
-    padding:100px 8%;
-    background:#fff;
+/* ==========================================
+   Why Choose Section
+========================================== */
+
+.why-choose {
+  padding: 100px 8%;
+  background: #ffffff;
 }
 
-.why-heading{
-    text-align:center;
-    max-width:700px;
-    margin:auto;
+/* ==========================================
+   Heading
+========================================== */
+
+.why-heading {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
 }
 
-.why-heading p:first-child{
-    color:#D4AF37;
-    letter-spacing:3px;
-    font-weight:600;
-    margin-bottom:12px;
+.why-heading p:first-child {
+  color: #D4AF37;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
 }
 
-.why-heading h2{
-    font-size:48px;
-    color:#07182e;
-    margin-bottom:15px;
-    font-family:Georgia, serif;
+.why-heading h2 {
+  font-size: 48px;
+  color: #07182e;
+  font-family: Georgia, serif;
+  margin-bottom: 18px;
 }
 
-.why-heading span{
-    display:block;
-    width:70px;
-    height:3px;
-    background:#D4AF37;
-    margin:0 auto 25px;
+.why-heading span {
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #D4AF37;
+  margin: 0 auto 25px;
 }
 
-.why-text{
-    color:#666;
-    line-height:1.8;
-    font-size:17px;
+.why-text {
+  color: #666;
+  font-size: 17px;
+  line-height: 1.8;
 }
 
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:30px;
-    margin-top:70px;
+/* ==========================================
+   Cards Grid
+========================================== */
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 70px;
 }
 
-.why-card{
-    background:white;
-    padding:40px 25px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 8px 25px rgba(0,0,0,.08);
-    transition:.35s;
+/* ==========================================
+   Card
+========================================== */
+
+.why-card {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
 }
 
-.why-card:hover{
-    transform:translateY(-10px);
+/* ==========================================
+   Icon
+========================================== */
+
+.icon {
+  width: 80px;
+  height: 80px;
+  background: #07182e;
+  color: #D4AF37;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 34px;
+  transition: all 0.4s ease;
 }
 
-.icon{
-    width:80px;
-    height:80px;
-    background:#07182e;
-    color:#D4AF37;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin:auto;
-    font-size:34px;
+/* ==========================================
+   Title
+========================================== */
+
+.why-card h3 {
+  margin: 25px 0 15px;
+  color: #07182e;
+  font-size: 24px;
 }
 
-.why-card h3{
-    margin:25px 0 15px;
-    color:#07182e;
-    font-size:24px;
+/* ==========================================
+   Description
+========================================== */
+
+.why-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 15px;
 }
 
-.why-card p{
-    color:#666;
-    line-height:1.7;
+/* ==========================================
+   Desktop Hover Effects
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .why-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  }
+
+  .why-card:hover .icon {
+    background: #D4AF37;
+    color: #07182e;
+    transform: rotate(360deg);
+  }
+
 }
 
-@media(max-width:992px){
+/* ==========================================
+   Mobile Touch Effects
+========================================== */
 
-.why-grid{
-    grid-template-columns:repeat(2,1fr);
+@media (hover: none) {
+
+  .why-card:active {
+    transform: scale(0.97);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  .why-card:active .icon {
+    background: #D4AF37;
+    color: #07182e;
+    transform: scale(1.1);
+  }
+
 }
 
+/* ==========================================
+   Tablet
+========================================== */
+
+@media (max-width: 992px) {
+
+  .why-choose {
+    padding: 80px 6%;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .why-heading h2 {
+    font-size: 40px;
+  }
+
 }
 
-@media(max-width:768px){
+/* ==========================================
+   Mobile
+========================================== */
 
-.why-grid{
-    grid-template-columns:1fr;
+@media (max-width: 768px) {
+
+  .why-choose {
+    padding: 70px 5%;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-heading h2 {
+    font-size: 32px;
+  }
+
+  .why-text {
+    font-size: 15px;
+  }
+
+  .why-card {
+    padding: 30px 20px;
+  }
+
+  .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+
+  .why-card h3 {
+    font-size: 22px;
+  }
+
 }
 
-.why-heading h2{
-    font-size:36px;
-}
+/* ==========================================
+   Small Mobile
+========================================== */
+
+@media (max-width: 480px) {
+
+  .why-choose {
+    padding: 60px 20px;
+  }
+
+  .why-heading h2 {
+    font-size: 28px;
+  }
+
+  .why-heading p:first-child {
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .why-text {
+    font-size: 14px;
+  }
+
+  .why-card {
+    padding: 25px 18px;
+  }
+
+  .icon {
+    width: 65px;
+    height: 65px;
+    font-size: 26px;
+  }
+
+  .why-card h3 {
+    font-size: 20px;
+  }
+
+  .why-card p {
+    font-size: 14px;
+  }
 
 }

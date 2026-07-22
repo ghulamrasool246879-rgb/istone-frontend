@@ -15,7 +15,7 @@ function Properties() {
   const fetchProperties = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/properties"
+        `${API_URL}/api/properties`
       );
 
       setProperties(data);
@@ -33,7 +33,7 @@ function Properties() {
 
     try {
       await axios.delete(
-        `http://localhost:5000/api/properties/${id}`
+        `${API_URL}/api/properties/${id}`
       );
 
       fetchProperties();

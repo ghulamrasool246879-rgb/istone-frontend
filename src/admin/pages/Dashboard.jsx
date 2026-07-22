@@ -3,8 +3,9 @@ import DashboardCard from "../components/DashboardCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function Dashboard() {
+const API_URL = import.meta.env.VITE_API_URL;
 
+function Dashboard() {
   const [stats, setStats] = useState({
     totalProperties: 0,
     featuredProperties: 0,
@@ -19,43 +20,38 @@ function Dashboard() {
   const loadStats = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/properties/dashboard/stats"
+        `${API_URL}/api/properties/dashboard/stats`
       );
 
       setStats(data);
-
     } catch (error) {
-      console.log(error);
+      console.error("Failed to load dashboard stats:", error);
     }
   };
 
   return (
     <AdminLayout>
-
       <div className="cards">
-
         <DashboardCard
           title="Total Properties"
           value={stats.totalProperties}
         />
 
         <DashboardCard
-          title="Featured"
+          title="Featured Properties"
           value={stats.featuredProperties}
         />
 
         <DashboardCard
-          title="Residential"
+          title="Residential Properties"
           value={stats.residentialProperties}
         />
 
         <DashboardCard
-          title="Commercial"
+          title="Commercial Properties"
           value={stats.commercialProperties}
         />
-
       </div>
-
     </AdminLayout>
   );
 }

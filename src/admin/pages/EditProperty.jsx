@@ -7,6 +7,8 @@ import Topbar from "../components/Topbar";
 
 import "../css/addProperty.css";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function EditProperty() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -28,12 +30,12 @@ function EditProperty() {
   const loadProperty = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/properties/${id}`
+        `${API_URL}/api/properties/${id}`
       );
 
       setFormData(data);
-
     } catch (error) {
+      console.error(error);
       alert("Property not found.");
     }
   };
@@ -41,10 +43,10 @@ function EditProperty() {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }));
   };
 
   const updateProperty = async (e) => {
@@ -53,45 +55,44 @@ function EditProperty() {
     try {
       const adminInfo = JSON.parse(localStorage.getItem("adminInfo"));
 
-await axios.put(
-  `http://localhost:5000/api/properties/${id}`,
-  formData,
-  {
-    headers: {
-      Authorization: `Bearer ${adminInfo.token}`,
-    },
-  }
-);
+      await axios.put(
+        `${API_URL}/api/properties/${id}`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${adminInfo?.token}`,
+          },
+        }
+      );
 
       alert("Property Updated Successfully");
 
       navigate("/admin/properties");
-
     } catch (error) {
-      alert("Update Failed");
+      console.error(error);
+      alert(
+        error.response?.data?.message || "Update Failed"
+      );
     }
   };
 
   return (
     <div className="admin-container">
-
       <Sidebar />
 
       <div className="admin-content">
-
         <Topbar />
 
         <div className="add-property">
-
           <h1>Edit Property</h1>
 
           <form onSubmit={updateProperty}>
-
             <input
               type="text"
               name="title"
               value={formData.title}
               onChange={handleChange}
+              required
             />
 
             <select
@@ -99,8 +100,8 @@ await axios.put(
               value={formData.city}
               onChange={handleChange}
             >
-              <option>Islamabad</option>
-              <option>Rawalpindi</option>
+              <option value="Islamabad">Islamabad</option>
+              <option value="Rawalpindi">Rawalpindi</option>
             </select>
 
             <input
@@ -108,6 +109,7 @@ await axios.put(
               name="society"
               value={formData.society}
               onChange={handleChange}
+              required
             />
 
             <select
@@ -115,8 +117,8 @@ await axios.put(
               value={formData.propertyType}
               onChange={handleChange}
             >
-              <option>Residential</option>
-              <option>Commercial</option>
+              <option value="Residential">Residential</option>
+              <option value="Commercial">Commercial</option>
             </select>
 
             <input
@@ -124,6 +126,7 @@ await axios.put(
               name="price"
               value={formData.price}
               onChange={handleChange}
+              required
             />
 
             <textarea
@@ -131,31 +134,25 @@ await axios.put(
               name="description"
               value={formData.description}
               onChange={handleChange}
+              required
             />
 
             <label>
-
               <input
                 type="checkbox"
                 name="featured"
                 checked={formData.featured}
                 onChange={handleChange}
               />
-
               Featured Property
-
             </label>
 
             <button type="submit">
               Update Property
             </button>
-
           </form>
-
         </div>
-
       </div>
-
     </div>
   );
 }
